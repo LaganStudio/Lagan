@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class CharacterController1 : MonoBehaviour {
     public GameObject playerGO;
@@ -11,10 +10,10 @@ public class CharacterController1 : MonoBehaviour {
 		playerMI = playerGO.GetComponent<IMovable> ();
 		playerDI = playerGO.GetComponent<IDamageable> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Jump") && playerDI.isAlive())
+		if (Input.GetButtonDown("Jump") && playerDI.IsAlive())
         {
 			playerMI.Jump();
         }
@@ -23,12 +22,10 @@ public class CharacterController1 : MonoBehaviour {
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         //player.SetAnimatorParameters();
-		if(playerDI.isAlive()){
-			playerMI.Move(moveHorizontal); 
-		}
-
-		if (Input.GetKeyDown (KeyCode.F)) {
-			playerDI.getHit();
-		}
+		if(playerDI.IsAlive()){
+			playerMI.Move(moveHorizontal);
+		} else {
+            playerMI.Move(0.0f);
+        }
     }
 }

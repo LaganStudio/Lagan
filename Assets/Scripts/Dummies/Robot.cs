@@ -8,14 +8,17 @@ public class Robot : Humanoid, IDamageable {
         SetAnimatorParameters();
         FacingHandler();
     }
-	public bool isAlive()
+	public bool IsAlive()
 	{
 		return true;
 	}
-	public void getHit()
+	public void Kill()
 	{
-		if (isAlive ()) {
+		if (IsAlive()) {
 			Debug.Log ("Получил удар");
 		}
-	}
+    }
+    public void GetHit(int damage){
+        print("Get " + damage + " damage");
+    }
 }

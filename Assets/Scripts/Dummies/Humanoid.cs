@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Humanoid : MonoBehaviour, IMovable
@@ -9,14 +9,14 @@ public class Humanoid : MonoBehaviour, IMovable
     public Transform groundChecker;
     public LayerMask whatIsGround;
 
-	protected bool isFacingRight = true;
-	protected bool isGrounded = false;
-	protected bool isButtonPressed = false;
+    protected bool isFacingRight = true;
+    protected bool isGrounded = false;
+    protected bool isButtonPressed = false;
 
-	protected Rigidbody2D rb2D;
-	protected Collider2D c2D;
+    protected Rigidbody2D rb2D;
+    protected Collider2D c2D;
     protected Animator anim;
-	protected Transform tran;
+    protected Transform tran;
 
     protected void Start()
     {
@@ -24,18 +24,18 @@ public class Humanoid : MonoBehaviour, IMovable
         anim = GetComponent<Animator>();
         tran = GetComponent<Transform>();
     }
-    
-	public void Move(float move)
-    {   
-		if (Mathf.Abs (move) > 0.1f) {
-			isButtonPressed = true;
-		} else {
-			isButtonPressed = false;
-		}
+
+    public void Move(float move)
+    {
+        if (Mathf.Abs (move) > 0.1f) {
+            isButtonPressed = true;
+        } else {
+            isButtonPressed = false;
+        }
         rb2D.velocity = new Vector2(move * maxSpeed, rb2D.velocity.y);
     }
-    
-	public void Jump()
+
+    public void Jump()
     {
         if (isGrounded)
         {
@@ -44,8 +44,8 @@ public class Humanoid : MonoBehaviour, IMovable
             anim.SetBool("isGrounded", isGrounded);
         }
     }
-    
-	protected void CheckGround()
+
+    protected void CheckGround()
     {
         isGrounded = Physics2D.OverlapCircle(groundChecker.position, groundCheckerRadius, whatIsGround);
     }
@@ -57,18 +57,17 @@ public class Humanoid : MonoBehaviour, IMovable
         newScale.x *= -1;
         tran.localScale = newScale;
     }
-    
-	protected void SetAnimatorParameters()
+
+    protected void SetAnimatorParameters()
     {
         anim.SetFloat("Speed", Mathf.Abs(rb2D.velocity.x));
-		anim.SetBool ("isButtonPressed", isButtonPressed);
+        anim.SetBool ("isButtonPressed", isButtonPressed);
         anim.SetFloat("vSpeed", rb2D.velocity.y);
         anim.SetBool("isGrounded", isGrounded);
         AnimatorStateInfo a = anim.GetCurrentAnimatorStateInfo(0);
         if (a.IsName("Run"))
         {
             anim.speed = Mathf.Abs(rb2D.velocity.x) / maxSpeed;
-
         }
         else
         {
@@ -81,9 +80,9 @@ public class Humanoid : MonoBehaviour, IMovable
         if ((rb2D.velocity.x < -0.1) && isFacingRight && isButtonPressed)
         {
             Flip();
-		} else if((rb2D.velocity.x > 0.1) && !isFacingRight && isButtonPressed)
-        {
-            Flip();
+            } else if((rb2D.velocity.x > 0.1) && !isFacingRight && isButtonPressed)
+            {
+                Flip();
+            }
         }
-    } 
-}
+    }

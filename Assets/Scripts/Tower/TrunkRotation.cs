@@ -1,17 +1,13 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class TrunkRotation : MonoBehaviour {
-	int maxAngle, minAngle;
 	bool goingUp;
 	// Use this for initialization
 	void Start () {
 		goingUp = true;
-		maxAngle = 30;
-		minAngle = 0;
 		transform.rotation = Quaternion.Euler(new Vector3(0,0,330));
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		//Debug.Log(transform.rotation);
