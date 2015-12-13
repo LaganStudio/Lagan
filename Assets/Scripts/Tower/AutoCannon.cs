@@ -5,6 +5,7 @@ public class AutoCannon : MonoBehaviour {
 	public GameObject bullet;
 	public GameObject startEdge, endEdge;
 	public GameObject trunk;
+	public int force;
 	public float reloadTime; //время перезарядки
 	private float coolDown;
 
@@ -21,7 +22,7 @@ public class AutoCannon : MonoBehaviour {
 		if(coolDown == reloadTime){
 			GameObject newObject = (GameObject)Instantiate(bullet, endEdge.transform.position,trunk.transform.rotation);
 			Rigidbody2D newRB2D =  newObject.GetComponent<Rigidbody2D>();
-			newRB2D.AddForce(TrunkDirection*1000);
+			newRB2D.AddForce(TrunkDirection*force);
 			Destroy(newObject, 10);
 			coolDown -= Time.fixedDeltaTime;
 		} else {
