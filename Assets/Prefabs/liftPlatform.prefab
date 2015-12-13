@@ -11,7 +11,7 @@ GameObject:
   m_Layer: 0
   m_Name: higherPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
@@ -32,7 +32,7 @@ GameObject:
   m_Layer: 0
   m_Name: Lift
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -47,7 +47,7 @@ GameObject:
   m_Layer: 0
   m_Name: liftPlatform
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -62,7 +62,7 @@ GameObject:
   m_Layer: 0
   m_Name: lowerPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 12.1999998, z: 0}
+  m_LocalPosition: {x: 0, y: 4.36999989, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 409522}
@@ -85,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.6599998, y: 7.84000015, z: 1}
+  m_LocalPosition: {x: 17.8199997, y: 4.59000015, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 466358}
@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0390000008, y: .0199999996, z: 0}
+  m_LocalPosition: {x: .0390000008, y: -.340000004, z: 0}
   m_LocalScale: {x: 3.95652437, y: .732111812, z: 1}
   m_Children: []
   m_Father: {fileID: 409522}
@@ -203,7 +203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019ecf16bb39d4bcba8cdc5320c83aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatIsPlayer: {}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
   lowerPoint: {fileID: 466358}
   higherPoint: {fileID: 405848}
   upVel: {x: 0, y: 5}
