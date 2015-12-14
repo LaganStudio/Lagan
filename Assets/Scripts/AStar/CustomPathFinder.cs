@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
-public class myPathfinder : MonoBehaviour {
+public class CustomPathfinder : MonoBehaviour {
 	Grid grid;
 	void Awake(){
 		grid = GetComponent<Grid>();

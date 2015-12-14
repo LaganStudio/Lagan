@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Robot : Humanoid, IDamageable {
     public void FixedUpdate()

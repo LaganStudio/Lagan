@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class AutoCannon : MonoBehaviour {
 	public GameObject bullet;

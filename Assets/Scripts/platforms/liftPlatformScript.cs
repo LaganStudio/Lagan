@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class liftPlatformScript : MonoBehaviour {
+public class LiftPlatformScript : MonoBehaviour {
 	private Rigidbody2D rgbd2d;
 	private BoxCollider2D boxCol2d;
 	public LayerMask whatIsPlayer;
@@ -12,10 +11,10 @@ public class liftPlatformScript : MonoBehaviour {
 		rgbd2d = GetComponent<Rigidbody2D>();
 		boxCol2d = GetComponent<BoxCollider2D>();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	/*void FixedUpdate(){

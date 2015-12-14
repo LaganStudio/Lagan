@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class movingPlatformScript : MonoBehaviour {
+public class MovingPlatformScript : MonoBehaviour {
 	/**
 	* Давай инициализоровать переменные в void Start, кроме public переменных;
 	* Объявлять переменные следует в порядке public, protected, private;
