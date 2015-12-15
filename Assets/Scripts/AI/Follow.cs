@@ -1,10 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Follow : IState {
-	void Start () {
-
-	}
 	public void Action(AIController ai, IMovable dummy){
 		Vector2 enemyPosition = new Vector2(ai.Enemy.transform.position.x, ai.Enemy.transform.position.y);
 		Vector2 diff = enemyPosition - new Vector2(ai.transform.position.x, ai.transform.position.y);

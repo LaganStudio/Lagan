@@ -37,11 +37,15 @@ public class Grid : MonoBehaviour
                     jumpable = true;
                 else
                     jumpable = Physics2D.Raycast(worldPoint, Vector2.down, 4.5f, whatIsWalkable);
-
-                if (Physics2D.OverlapCircle(worldPoint, nodeRadius - 0.1f, whatIsWalkable))
+                Collider2D tempColl;
+                if ((tempColl = Physics2D.OverlapCircle(worldPoint, nodeRadius - 0.1f, whatIsWalkable))!=null)
                 {
-                    walkable = false;
-                    jumpable = false;
+                    if(tempColl.isTrigger){
+
+                    } else {
+                        walkable = false;
+                        jumpable = false;
+                    }
                 }
                 nodeGrid[i, j] = new Node(walkable, jumpable, worldPoint, i, j);
             }
@@ -94,7 +98,6 @@ public class Grid : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position + new Vector3(gridWorldSize.x / 2, gridWorldSize.y / 2, 0), new Vector3(gridWorldSize.x, gridWorldSize.y, 0));
-
         if (nodeGrid != null)
         {
             foreach (Node n in nodeGrid)
